@@ -1,0 +1,60 @@
+libparse-recdescent-perl (1.967012+dfsg-1) unstable; urgency=low
+
+  From upstream Changes:
+
+    - *** NON-BACKWARDS COMPATIBLE CHANGE! *** Change global the
+      <skip:> directive to eval similar to other <skip:> directives,
+      rather than being single-quoted in the resulting parser.
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 27 Sep 2015 08:15:27 +0200
+
+libparse-recdescent-perl (1.967006+dfsg-1) unstable; urgency=low
+
+  From upstream Changes:  
+
+    - *** NON-BACKWARDS COMPATIBLE CHANGE! *** Change the caches for
+      $prevline and $thisline to be local to the parser, rather than
+      lexical vars in Parse::RecDescent.  This prevents previously
+      generated parsers from interfering with the line counts of
+      later parsers.
+
+    - *** NON-BACKWARDS COMPATIBLE CHANGE! *** A repetition directive
+      such as 'id(s /,/)' correctly creates a temporary @item variable
+      to hold the 'id's that are matched.  That @item variable is them
+      used to set the real $item[] entry for that repetition.  The
+      same treatment is now given to %item.  Formerly, in a production like:
+
+          id ',' id(s /,/)
+
+      matched against:
+
+          xxx, yyy, zzz
+
+      The $item{id} entry which should be 'xxx' is overwritten by
+      'yyy' and then 'zzz' prior to the action being executed.  Now
+      'yyy' and 'zzz' set $item{id}, but in the private %item, which
+      goes out of scope once the repetition match completes.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 12 Feb 2012 14:52:43 +0100
+
+libparse-recdescent-perl (1.94.free-3) unstable; urgency=low
+
+    Realistically, the tutorial from the Perl Journal is not going to be
+    in Debian, even in the non-free section.  This tutorial (which was
+    included in the Debian package for versions << 1.94.free-1) can be
+    read at:
+
+    http://search.cpan.org/src/DCONWAY/Parse-RecDescent-1.94/tutorial/tutorial.html
+
+ -- Rafael Laboissiere <rafael@debian.org>  Fri,  9 Mar 2007 14:31:40 +0100
+
+libparse-recdescent-perl (1.94.free-2) unstable; urgency=low
+
+    The tutorial from The Perl Journal, which is shipped with the upstream
+    sources, is removed from the package (both source and binary) because
+    its licensing terms are not compatible with the DFSG.  A new package
+    called libparse-recdescent-perl-tutorial-nonfree containing this
+    tutorial has been created.
+
+ -- Rafael Laboissiere <rafael@debian.org>  Thu, 15 Sep 2005 15:11:57 +0200
+

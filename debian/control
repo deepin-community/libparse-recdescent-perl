@@ -1,0 +1,37 @@
+Source: libparse-recdescent-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>,
+           Florian Schlichting <fsfs@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper (>= 10),
+               libmodule-build-perl,
+               perl
+Build-Depends-Indep: libtest-pod-perl,
+                     libtest-warn-perl
+Standards-Version: 4.1.3
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-perl/packages/libparse-recdescent-perl.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-perl/packages/libparse-recdescent-perl.git
+Homepage: https://metacpan.org/release/Parse-RecDescent/
+
+Package: libparse-recdescent-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends}
+Breaks: libcss-perl (<< 1.08-1+nmu2),
+        libmail-imapclient-perl (<< 3.30-2)
+Description: Perl module to create and use recursive-descent parsers
+ Parse::RecDescent incrementally generates top-down recursive-descent text
+ parsers from simple yacc-like grammar specifications. It provides:
+ .
+   * Regular expressions or literal strings as terminals (tokens)
+   * Multiple (non-contiguous) productions for any rule
+   * Repeated, optional and alternate sub-rules within productions
+   * Late-bound (run-time dispatched) sub-rules
+   * Full access to Perl within actions specified as part of the grammar
+   * Simple automated error reporting during parser generation and parsing
+   * The ability to commit to, uncommit to, or reject particular productions
+     during a parse
+   * Incremental extension of the parsing grammar (even during a parse)
+   * The ability to retrieve the generated parsing code

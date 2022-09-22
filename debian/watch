@@ -1,0 +1,3 @@
+version=3
+opts="dversionmangle=s/\+dfsg//,repacksuffix=+dfsg" \
+https://metacpan.org/release/Parse-RecDescent .*/Parse-RecDescent-v?(\d[\d.-]+)\.(?:tar(?:\.gz|\.bz2)?|tgz|zip)$
